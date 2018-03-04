@@ -11,7 +11,8 @@ class Book
 
     public function __construct()
     {
-        $lines = file(__DIR__.'/../../data/comments.txt', FILE_IGNORE_NEW_LINES);
+        $this->path = __DIR__.'/../../data/comments.txt';
+        $lines = file($this->path, FILE_IGNORE_NEW_LINES);
         foreach ($lines as $line)
         {
             [$author, $datetime, $message] = explode('|',$line);
@@ -20,14 +21,16 @@ class Book
         }
     }
 
-    public function getAllRecords()
+    public function getAllRecords() :array
     {
         return $this->records;
     }
 
-    public function addRecords(Record $record) :array
+    public function addRecord(Record $record)
     {
         $this->records[] = $record;
+        return $this;
+
     }
 
     public function save()

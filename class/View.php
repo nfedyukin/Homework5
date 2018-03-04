@@ -15,4 +15,14 @@ class View
         include $template;
     }
 
+    public function render($template): string
+    {
+        ob_start();
+        $this->display($template);
+        $out = ob_get_contents();
+        ob_end_clean();
+
+        return $out;
+    }
+
 }

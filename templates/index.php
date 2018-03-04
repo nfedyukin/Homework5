@@ -5,17 +5,38 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Главная страница</title>
 </head>
 <body>
-<h1>Гостевая книга</h1>
+<h1><a href="/Homework5/newssection.php">Новости</a> </h1>
+<div style="border: solid">
 
-<?php
-    foreach ($this->data['book'].getAllRecords() as $record){
-?>
-<blockquote><article style="border: solid 2px #DBCECE" ">
-    <?php echo $record->getMessage(); ?>
-    </article></blockquote>
-<?php } ?>
+    <?php
+    $lastnews = array_slice($this->data['news']->getAllNews(),-3 , 3);
+    foreach ($lastnews as $article)
+    {
+        echo $article->getHeadline();
+        ?><br> <?php
+    }
+    ?>
+
+</div>
+
+<h1><a href="/Homework5/guestbook.php">Гостевая книга</a> </h1>
+<div style="border: solid">
+
+    <?php
+    $lastcomments = array_slice($this->data['book']->getAllRecords(),-3 , 3);
+    foreach ($lastcomments as $record)
+    {
+        echo $record->getMessage();
+        ?><br> <?php
+    }
+    ?>
+
+</div>
+
+
+
 </body>
 </html>
