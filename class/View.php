@@ -12,13 +12,13 @@ class View
 
     public function display($template)
     {
-        include $template;
+        echo $this->render($template);
     }
 
     public function render($template): string
     {
         ob_start();
-        $this->display($template);
+        include $template;
         $out = ob_get_contents();
         ob_end_clean();
 

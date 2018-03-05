@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Nikolay
- * Date: 04.03.2018
- * Time: 22:06
- */
 
 namespace News;
 

@@ -1,3 +1,7 @@
+<!-- Шаблон страницы Последние новости
+Отображается заглавие (ссылка) и часть новости
+-->
+
 <!doctype html>
 <html lang="ru">
 <head>
@@ -8,7 +12,7 @@
     <title>Новости</title>
 </head>
 <body>
-
+<h1>Последние новости</h1>
     <div>
         <?php
         $news = $this->data['news']->getAllNews();
@@ -19,9 +23,9 @@
             echo $article->getHeadline();
 
 
-            ?></a> <br> <blockquote><?php
+            ?></a> <br> <small><?php
             echo substr($article->getNewsText(),0,100) . ' ...';
-            ?> </blockquote> <?php
+            ?> </small></blockquote><hr> <?php
         }
         ?>
     </div>

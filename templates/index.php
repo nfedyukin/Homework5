@@ -1,3 +1,13 @@
+<!-- Шаблон главной страницы
+Отображается заголовок и вызываются 2 шаблона для формирования блоков
+с новостями и с гостевой книгой
+-->
+
+<?php
+$newsblock = $this->render(__DIR__ . '/../templates/newsblock.php');
+$gbblock = $this->render(__DIR__ . '/../templates/gbblock.php');
+?>
+
 <!doctype html>
 <html lang="ru">
 <head>
@@ -9,33 +19,12 @@
 </head>
 <body>
 <h1><a href="/Homework5/newssection.php">Новости</a> </h1>
-<div style="border: solid">
 
-    <?php
-    $lastnews = array_slice($this->data['news']->getAllNews(),-3 , 3);
-    foreach ($lastnews as $article)
-    {
-        echo $article->getHeadline();
-        ?><br> <?php
-    }
-    ?>
-
-</div>
+<?php echo $newsblock; ?>
 
 <h1><a href="/Homework5/guestbook.php">Гостевая книга</a> </h1>
-<div style="border: solid">
 
-    <?php
-    $lastcomments = array_slice($this->data['book']->getAllRecords(),-3 , 3);
-    foreach ($lastcomments as $record)
-    {
-        echo $record->getMessage();
-        ?><br> <?php
-    }
-    ?>
-
-</div>
-
+<?php echo $gbblock; ?>
 
 
 </body>

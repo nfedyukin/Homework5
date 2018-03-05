@@ -1,3 +1,5 @@
+<!-- Шаблон для отображения гостевой книги -->
+
 <!doctype html>
 <html lang="ru">
 <head>
@@ -12,7 +14,7 @@
 
 <?php
 
-    foreach ($this->data['book']->getAllRecords() as $record){
+    foreach ($this->data['book']->getAllRecords() as $record):
 ?>
 <blockquote><article style="border: solid 2px #DBCECE" ">
     <div style="color: coral">
@@ -20,7 +22,7 @@
     </div><br>
     <?php echo $record->getMessage(); ?>
     </article></blockquote>
-<?php } ?>
+<?php endforeach; ?>
 
 <div style="width: 500px">
     <form style="border: 1px solid black" method="post" action="/Homework5/uploadcomment.php">
