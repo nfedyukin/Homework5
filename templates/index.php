@@ -1,8 +1,6 @@
 <!-- Шаблон главной страницы
 Отображается заголовок и вызываются 2 шаблона для формирования блоков
-с новостями и с гостевой книгой
--->
-
+с новостями и с гостевой книгой-->
 <?php
 $newsblock = $this->render(__DIR__ . '/../templates/newsblock.php');
 $gbblock = $this->render(__DIR__ . '/../templates/gbblock.php');
@@ -18,7 +16,7 @@ $gbblock = $this->render(__DIR__ . '/../templates/gbblock.php');
     <title>Главная страница</title>
 </head>
 <body>
-<h1><a href="/Homework5/newssection.php">Новости</a> </h1>
+<h1><a href="/Homework5/news.php">Новости</a> </h1>
 
 <?php echo $newsblock; ?>
 

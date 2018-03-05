@@ -1,7 +1,5 @@
 <!-- Шаблон страницы Последние новости
-Отображается заглавие (ссылка) и часть новости
--->
-
+Отображается заглавие (ссылка) и часть новости-->
 <!doctype html>
 <html lang="ru">
 <head>
@@ -19,7 +17,7 @@
         foreach ($news as $index => $article)
         {
 
-            ?><br><a href = "/Homework5/article.php?ID=<?php echo $index  ?>" ><?php
+            ?><br><a href = "/Homework5/article.php?id=<?php echo $index  ?>" ><?php
             echo $article->getHeadline();
 
 
